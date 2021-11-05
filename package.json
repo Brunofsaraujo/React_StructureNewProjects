@@ -1,0 +1,12 @@
+{
+  "name": "React_StructureNewProjects",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Brunofsaraujo/React_StructureNewProjects.git",
+  "author": "BrunoAraujo <bruno.araujo@uppertools.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
