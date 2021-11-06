@@ -2,9 +2,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
 module.exports = {
-	mode: "development",
-	devtool: false,
+	mode: isDevelopment ? 'development' : 'production',
+	devtool: isDevelopment ? 'eval-source-map' : 'source-map',
 	entry: path.resolve(__dirname, "src", "index.jsx"),
 	output: {
 		path: path.resolve(__dirname, "dist"),
@@ -21,13 +23,6 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "public", "index.html"),
-		}),
-		new webpack.SourceMapDevToolPlugin({
-			test: /\.s?[ac]ss(\?hash=[A-z0-9]*)?$/,
-			columns: true,
-		}),
-		new webpack.EvalSourceMapDevToolPlugin({
-			test: /\.([jt]sx?)$/,
 		}),
 	],
 	module: {
