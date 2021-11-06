@@ -1,4 +1,4 @@
-import global from './styles/global.css'
+import global from './styles/global.scss'
 
 export function App() {
     return <h1>Hello World</h1>
